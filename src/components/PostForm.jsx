@@ -7,6 +7,11 @@ const PostForm = () => {
     setPost({ ...post, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(post);
+  };
+
   const renderField = (label) => (
     <div>
       <label>{label}</label>{' '}
@@ -21,9 +26,11 @@ const PostForm = () => {
   console.log(post);
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {renderField('Title')}
       {renderField('Body')}
+
+      <button type='submit'>Submit</button>
     </form>
   );
 };
