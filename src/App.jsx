@@ -7,7 +7,7 @@ import EditPost from './pages/EditPost';
 function App() {
   return (
     <>
-      <h1>Hello World!</h1>
+      <h1>Hello Tanstack Query!</h1>
 
       <Routes>
         <Route path='/' element={<PostListPage />} />
