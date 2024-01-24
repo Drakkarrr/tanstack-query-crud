@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import PostListPage from './pages/PostListPage';
 import Post from './pages/Post';
+import EditPost from './pages/EditPost';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<PostListPage />} />
         <Route path='/post/:id' element={<Post />} />
-        <Route path='/' element={<PostListPage />} />
+        <Route path='/post/:id/edit' element={<EditPost />} />
       </Routes>
     </>
   );
