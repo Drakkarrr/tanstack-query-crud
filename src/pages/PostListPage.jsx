@@ -4,6 +4,8 @@ const PostListPage = () => {
   return (
     <div>
       <AddPost />
+      <br />
+      List Here
     </div>
   );
 };
