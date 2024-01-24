@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { fetchPosts } from '../api/posts';
 import AddPost from '../components/AddPost';
 import { useQuery } from '@tanstack/react-query';
 
 const PostListPage = () => {
+  const navigate = useNavigate();
   const {
     data: posts,
     isLoading,
@@ -22,7 +24,11 @@ const PostListPage = () => {
       <br />
       {posts.map((post) => (
         <div key={post.id}>
-          <h4>{post.title}</h4>
+          <h4
+            className='button-text'
+            onClick={() => navigate(`/post/${post.id}`)}>
+            {post.title}
+          </h4>
           <button>Edit Post</button> <button>Delete Post</button>
         </div>
       ))}
