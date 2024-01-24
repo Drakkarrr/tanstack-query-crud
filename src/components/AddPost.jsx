@@ -5,6 +5,8 @@ const AddPost = () => {
     <>
       <h2>Add New Post</h2>
       <PostForm />
+      <br />
+      List here
     </>
   );
 };
