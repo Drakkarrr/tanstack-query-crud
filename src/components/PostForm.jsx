@@ -10,6 +10,7 @@ const PostForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(post);
+    setPost({ title: '', body: '' });
   };
 
   const renderField = (label) => (
@@ -23,13 +24,12 @@ const PostForm = () => {
       />
     </div>
   );
-  console.log(post);
 
   return (
     <form onSubmit={handleSubmit}>
       {renderField('Title')}
       {renderField('Body')}
-
+      <br />
       <button type='submit'>Submit</button>
     </form>
   );
