@@ -22,8 +22,8 @@ const PostListPage = () => {
       <br />
       {posts.map((post) => (
         <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
+          <h4>{post.title}</h4>
+          <button>Edit Post</button> <button>Delete Post</button>
         </div>
       ))}
     </>
