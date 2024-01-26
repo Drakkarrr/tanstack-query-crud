@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const PostListPage = () => {
   const navigate = useNavigate();
+
   const {
     data: posts,
     isLoading,
