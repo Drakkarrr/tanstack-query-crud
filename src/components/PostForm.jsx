@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
-const PostForm = ({ onSubmit }) => {
-  const [post, setPost] = useState({ title: '', body: '' });
+const PostForm = ({ onSubmit, initialValue }) => {
+  const [post, setPost] = useState({
+    title: initialValue.title || '',
+    body: initialValue.body || '',
+  });
 
   const handleOnChange = (e) => {
     setPost({ ...post, [e.target.name]: e.target.value });
