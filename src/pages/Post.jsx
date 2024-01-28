@@ -6,23 +6,28 @@ const Post = () => {
   const { id } = useParams();
 
   const {
-    data: posts,
+    data: post,
     isLoading,
     isError,
     error,
   } = useQuery({
-    queryKey: ['posts'],
+    queryKey: ['posts', id],
     queryFn: () => fetchPost(id),
   });
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>{error.message}</div>;
 
-  console.log(posts);
+  console.log(post);
 
   return (
     <>
-      <div>Post {id}</div>
+      <div>
+        Post {id} <br /> <br />
+        <button>Create Post</button>
+        <h2>{post.title}</h2>
+        <p>{post.body}</p>
+      </div>
     </>
   );
 };
