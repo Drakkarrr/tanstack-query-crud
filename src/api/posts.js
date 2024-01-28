@@ -9,7 +9,7 @@ export const fetchPost = async (id) => {
 };
 
 export const createPost = async (newPost) => {
-  const response = await fetch(`http://localhost:3000/posts/`, {
+  const response = await fetch(`http://localhost:3000/posts`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

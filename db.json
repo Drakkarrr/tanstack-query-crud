@@ -24,6 +24,11 @@
       "id": "5",
       "title": "Title 5",
       "body": "Body 5"
+    },
+    {
+      "id": 6,
+      "title": "test post",
+      "body": "post test"
     }
   ]
 }
