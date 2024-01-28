@@ -7,9 +7,8 @@ const EditPost = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const handleSubmit = (post) => {
-    console.log(post);
-    // navigate('/');
+  const handleSubmit = (updatedPost) => {
+    console.log(updatedPost);
   };
 
   const {
