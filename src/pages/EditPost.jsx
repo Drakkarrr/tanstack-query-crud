@@ -7,6 +7,11 @@ const EditPost = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
+  const handleSubmit = (post) => {
+    console.log(post);
+    // navigate('/');
+  };
+
   const {
     data: post,
     isLoading,
@@ -23,7 +28,7 @@ const EditPost = () => {
   return (
     <div>
       EditPost {id}
-      <PostForm initialValue={post} />
+      <PostForm initialValue={post} onSubmit={handleSubmit} />
     </div>
   );
 };
