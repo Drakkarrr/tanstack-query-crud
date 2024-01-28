@@ -6,6 +6,14 @@ const AddPost = () => {
     mutationFn: createPostMutation,
   });
 
+  const handlerAddPost = (post) => {
+    createPostMutation.mutate({
+      title: 'New Post',
+      body: 'New Post Body',
+      ...post,
+    });
+  };
+
   return (
     <>
       <h2>Add New Post</h2>
