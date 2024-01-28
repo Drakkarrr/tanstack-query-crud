@@ -9,7 +9,7 @@ const AddPost = () => {
 
   const handleAddPost = (post) => {
     createPostMutation.mutate({
-      id: 7,
+      id: 6,
       ...post,
     });
   };
