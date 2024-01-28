@@ -8,7 +8,7 @@ export const fetchPost = async (id) => {
   return response.json();
 };
 
-export const createhPost = async (newPost) => {
+export const createPost = async (newPost) => {
   const response = await fetch(`http://localhost:3000/posts/`, {
     method: 'POST',
     headers: {
