@@ -10,6 +10,7 @@ const AddPost = () => {
     mutationFn: createPost,
     onSuccess: () => {
       queryClient.invalidateQueries('posts');
+      alert('Post added successfully!');
     },
   });
 
