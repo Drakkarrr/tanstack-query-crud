@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import PostForm from './PostForm';
 import { createPost } from '../api/posts';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddPost = () => {
   const createPostMutation = useMutation({
@@ -9,7 +10,7 @@ const AddPost = () => {
 
   const handleAddPost = (post) => {
     createPostMutation.mutate({
-      id: 6,
+      id: uuidv4(),
       ...post,
     });
   };
