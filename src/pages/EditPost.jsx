@@ -23,7 +23,7 @@ const EditPost = () => {
   return (
     <div>
       EditPost {id}
-      <PostForm />
+      <PostForm initialValue={post} />
     </div>
   );
 };
