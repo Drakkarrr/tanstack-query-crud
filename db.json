@@ -26,7 +26,7 @@
       "body": "Body 5"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "test post",
       "body": "post test"
     },
@@ -39,6 +39,11 @@
       "id": "3cbb7764-47b8-4027-bd0c-96265348b1b3",
       "title": "asdasd123",
       "body": "trjh5yjty123"
+    },
+    {
+      "id": "ee197c1e-596b-4228-ad90-b6a5702bd5e2",
+      "title": "dsadasd",
+      "body": "rtgherthrt"
     }
   ]
 }
