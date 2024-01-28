@@ -30,7 +30,10 @@ const PostListPage = () => {
             onClick={() => navigate(`/post/${post.id}`)}>
             {post.title}
           </h4>
-          <button>Edit Post</button> <button>Delete Post</button>
+          <button onClick={() => navigate(`/post/${post.id}/edit`)}>
+            Edit Post
+          </button>{' '}
+          <button>Delete Post</button>
         </div>
       ))}
     </>
