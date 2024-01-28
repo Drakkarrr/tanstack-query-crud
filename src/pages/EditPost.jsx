@@ -20,8 +20,6 @@ const EditPost = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>{error.message}</div>;
 
-  console.log(post);
-
   return (
     <div>
       EditPost {id}
