@@ -3,7 +3,7 @@ import PostForm from './PostForm';
 
 const AddPost = () => {
   const createPostMutation = useMutation({
-    mutationFn: 
+    mutationFn: createPostMutation,
   });
 
   return (
