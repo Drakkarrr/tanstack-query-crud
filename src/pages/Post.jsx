@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { fetchPost } from '../api/posts';
 
 const Post = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const {
@@ -24,7 +25,7 @@ const Post = () => {
     <>
       <div>
         Post {id} <br /> <br />
-        <button>Create Post</button>
+        <button onClick={() => navigate(-1)}>Back to list Post</button>
         <h2>{post.title}</h2>
         <p>{post.body}</p>
       </div>
