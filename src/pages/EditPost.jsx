@@ -21,6 +21,14 @@ const EditPost = () => {
     queryFn: () => fetchPost(id),
   });
 
+  const updatePostMutation = useMutation({
+    mutationFn: updatePost,
+    // onSuccess: () => {
+    //   queryClient.invalidateQueries('posts');
+    //   navigate('/');
+    // },
+  });
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>{error.message}</div>;
 
