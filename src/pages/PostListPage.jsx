@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { fetchPosts } from '../api/posts';
+import { deletePost, fetchPosts } from '../api/posts';
 import AddPost from '../components/AddPost';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
@@ -21,10 +21,6 @@ const PostListPage = () => {
 
   const deletePostMutation = useMutation({
     mutationFn: deletePost,
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries({ queryKey: ['posts'] });
-    //   alert('Post deleted successfully!');
-    // },
   });
 
   return (
