@@ -1,15 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import PostForm from '../components/PostForm';
 import { fetchPost, updatePost } from '../api/posts';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 const EditPost = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-
-  const handleSubmit = (updatedPost) => {
-    console.log(updatedPost);
-  };
 
   const {
     data: post,
@@ -24,7 +20,7 @@ const EditPost = () => {
   const updatePostMutation = useMutation({
     mutationFn: updatePost,
     onSuccess: () => {
-      queryClient.invalidateQueries('posts');
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
       navigate('/');
     },
   });
@@ -32,6 +28,9 @@ const EditPost = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>{error.message}</div>;
 
+  const handleSubmit = (updatedPost) => {
+    updatePostMutation.mutate({ id, ...updatedPost });
+  };
   return (
     <div>
       EditPost {id}

@@ -9,7 +9,7 @@ const AddPost = () => {
   const createPostMutation = useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      queryClient.invalidateQueries('posts');
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
       alert('Post added successfully!');
     },
   });
