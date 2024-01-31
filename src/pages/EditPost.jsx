@@ -25,13 +25,14 @@ const EditPost = () => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>{error.message}</div>;
-
   const handleSubmit = (updatePost) => {
     updatePostMutation.mutate({ id, ...updatePost });
     alert('Post updated successfully!');
   };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>{error.message}</div>;
+
   return (
     <div>
       EditPost {id}

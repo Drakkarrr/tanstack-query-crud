@@ -17,9 +17,6 @@ const PostListPage = () => {
     queryFn: fetchPosts,
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>{error.message}</div>;
-
   const deletePostMutation = useMutation({
     mutationFn: deletePost,
     onSuccess: () => {
@@ -27,6 +24,13 @@ const PostListPage = () => {
       alert('Post deleted successfully!');
     },
   });
+
+  const handleDeletePost = (id) => {
+    console.log(id);
+  };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>{error.message}</div>;
 
   return (
     <>
@@ -42,7 +46,7 @@ const PostListPage = () => {
           <button onClick={() => navigate(`/post/${post.id}/edit`)}>
             Edit Post
           </button>{' '}
-          <button>Delete Post</button>
+          <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
         </div>
       ))}
     </>
