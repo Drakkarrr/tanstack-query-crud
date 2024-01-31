@@ -26,7 +26,7 @@ const PostListPage = () => {
   });
 
   const handleDeletePost = (id) => {
-    console.log(id);
+    deletePostMutation.mutate(id);
   };
 
   if (isLoading) return <div>Loading...</div>;
