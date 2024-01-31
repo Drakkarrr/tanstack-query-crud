@@ -30,6 +30,7 @@ const EditPost = () => {
 
   const handleSubmit = (updatePost) => {
     updatePostMutation.mutate({ id, ...updatePost });
+    alert('Post updated successfully!');
   };
   return (
     <div>
