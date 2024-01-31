@@ -28,13 +28,15 @@ const EditPost = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>{error.message}</div>;
 
-  const handleSubmit = (updatedPost) => {
-    updatePostMutation.mutate({ id, ...updatedPost });
+  const handleSubmit = (updatePost) => {
+    updatePostMutation.mutate({ id, ...updatePost });
   };
   return (
     <div>
       EditPost {id}
       <PostForm initialValue={post} onSubmit={handleSubmit} />
+      <br />
+      <button onClick={() => navigate('/')}>Back to list Post</button>
     </div>
   );
 };
